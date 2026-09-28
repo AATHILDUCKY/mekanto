@@ -1,0 +1,300 @@
+{
+  "$schema": "./products.schema.json",
+  "schemaVersion": 1,
+  "store": {
+    "name": "Mekanto",
+    "currency": "LKR",
+    "locale": "en-LK",
+    "sampleCatalog": true,
+    "notice": "A preview collection. Prices, dimensions, compatibility and availability are examples to confirm with Mekanto before ordering.",
+    "whatsappNumber": "94754545398",
+    "whatsappDisplay": "075 454 5398",
+    "siteUrl": "https://mekanto.com"
+  },
+  "categories": [
+    {
+      "id": "desk",
+      "name": "Desk & everyday",
+      "shortName": "Desk & everyday",
+      "description": "A little order. A better day.",
+      "icon": "desk",
+      "imagePosition": "100% 0%"
+    },
+    {
+      "id": "raspberry-pi",
+      "name": "Raspberry Pi",
+      "shortName": "Raspberry Pi",
+      "description": "A proper home for your Pi.",
+      "icon": "chip",
+      "imagePosition": "0% 0%"
+    },
+    {
+      "id": "drones",
+      "name": "Drones & FPV",
+      "shortName": "Drones & FPV",
+      "description": "Parts for your next build.",
+      "icon": "drone",
+      "imagePosition": "0% 100%"
+    },
+    {
+      "id": "robotics",
+      "name": "Robotics & arms",
+      "shortName": "Robotics",
+      "description": "Parts that put ideas in motion.",
+      "icon": "robot",
+      "image": "aseets/robotics.webp"
+    },
+    {
+      "id": "iot",
+      "name": "IoT & electronics",
+      "shortName": "IoT & electronics",
+      "description": "From breadboard to real world.",
+      "icon": "circuit",
+      "imagePosition": "100% 100%"
+    }
+  ],
+  "products": [
+    {
+      "id": "pi-5-air-case",
+      "name": "Pi 5 Air Case",
+      "category": "raspberry-pi",
+      "subtitle": "A clean home for your next big idea.",
+      "description": "A compact, ventilated enclosure concept that keeps your Raspberry Pi project tidy and its connections within reach. Made for a desktop setup, a small home server, or your next weekend experiment.",
+      "price": 1850,
+      "material": "PETG",
+      "colors": [
+        {
+          "name": "Graphite",
+          "hex": "#41413e"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#dedbd3"
+        },
+        {
+          "name": "Peach",
+          "hex": "#de7356"
+        }
+      ],
+      "dimensions": "95 × 65 × 32 mm",
+      "compatibility": "Raspberry Pi 5; confirm board revision and cooler clearance before printing.",
+      "includes": "Printed base and lid. Board, cooling hardware and fasteners are not included.",
+      "features": [
+        "Ventilated lid",
+        "Accessible port cutouts",
+        "Compact two-piece design"
+      ],
+      "imagePosition": "0% 0%",
+      "badge": "For your Pi",
+      "featured": true,
+      "keywords": [
+        "raspberrypi",
+        "raspberry pi",
+        "rasberrypi",
+        "pi5",
+        "case",
+        "cover",
+        "enclosure",
+        "home server"
+      ],
+      "categories": [
+        "raspberry-pi"
+      ],
+      "imageLayout": "atlas",
+      "image": "aseets/products.webp",
+      "imageAlt": "Pi 5 Air Case — Graphite 3D printed product concept"
+    },
+    {
+      "id": "loop-cable-organizer",
+      "name": "Loop Cable Organizer",
+      "category": "desk",
+      "subtitle": "Your cables, right where you left them.",
+      "description": "Three simple arches give loose charging cables a place to live. A small, sculptural detail for the edge of your desk, your bedside table, or wherever cables tend to disappear.",
+      "price": 650,
+      "material": "PLA",
+      "colors": [
+        {
+          "name": "Peach",
+          "hex": "#de7356"
+        },
+        {
+          "name": "Graphite",
+          "hex": "#41413e"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#dedbd3"
+        }
+      ],
+      "dimensions": "90 × 28 × 24 mm",
+      "compatibility": "Designed around standard charging cables. Confirm cable diameter before ordering.",
+      "includes": "One printed organizer. Cables and adhesive are not included.",
+      "features": [
+        "Three cable channels",
+        "Low-profile desk footprint",
+        "A choice of three finishes"
+      ],
+      "imagePosition": "100% 0%",
+      "badge": "Everyday essential",
+      "featured": true,
+      "keywords": [
+        "cable",
+        "management",
+        "organiser",
+        "organizer",
+        "desk",
+        "charging",
+        "tidy"
+      ],
+      "categories": [
+        "desk"
+      ],
+      "imageLayout": "atlas",
+      "image": "aseets/products.webp",
+      "imageAlt": "Loop Cable Organizer — Peach 3D printed product concept"
+    },
+    {
+      "id": "scout-drone-frame",
+      "name": "Scout FPV Frame",
+      "category": "drones",
+      "subtitle": "The starting point for your next build.",
+      "description": "An open-frame concept for experimenting with quadcopter layouts and component placement. A practical starting point for bench prototypes and learning projects, with room to adapt mounting points to your hardware.",
+      "price": 3200,
+      "material": "PETG",
+      "colors": [
+        {
+          "name": "Graphite",
+          "hex": "#41413e"
+        },
+        {
+          "name": "Peach",
+          "hex": "#de7356"
+        }
+      ],
+      "dimensions": "220 × 220 × 35 mm",
+      "compatibility": "Prototype concept only. Motor spacing, loads and flight suitability require engineering validation.",
+      "includes": "Printed frame components. Motors, propellers, electronics and fasteners are not included.",
+      "features": [
+        "Open component layout",
+        "Customizable mounting pattern",
+        "Designed for prototyping"
+      ],
+      "imagePosition": "0% 100%",
+      "badge": "For the makers",
+      "featured": true,
+      "keywords": [
+        "drone",
+        "fpv",
+        "quadcopter",
+        "frame",
+        "prototype"
+      ],
+      "categories": [
+        "drones"
+      ],
+      "imageLayout": "atlas",
+      "image": "aseets/products.webp",
+      "imageAlt": "Scout FPV Frame — Graphite 3D printed product concept"
+    },
+    {
+      "id": "node-project-box",
+      "name": "Node Project Box",
+      "category": "iot",
+      "subtitle": "Give your clever little circuit a home.",
+      "description": "A considered enclosure concept for sensor nodes and microcontroller projects. Internal mounting posts and a removable lid help turn a loose collection of wires into a tidy, approachable object.",
+      "price": 1450,
+      "material": "PETG",
+      "colors": [
+        {
+          "name": "Sage",
+          "hex": "#8f9c83"
+        },
+        {
+          "name": "Graphite",
+          "hex": "#41413e"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#dedbd3"
+        }
+      ],
+      "dimensions": "85 × 60 × 30 mm",
+      "compatibility": "Customizable for ESP32 and similar development boards. Supply your exact board dimensions and port positions.",
+      "includes": "Printed box and lid. Electronics, seals and fasteners are not included. Not weatherproof.",
+      "features": [
+        "Internal mounting posts",
+        "Removable ventilated lid",
+        "Adaptable port openings"
+      ],
+      "imagePosition": "100% 100%",
+      "badge": "Build something",
+      "featured": false,
+      "keywords": [
+        "iot",
+        "esp32",
+        "arduino",
+        "sensor",
+        "electronics",
+        "enclosure",
+        "box",
+        "development"
+      ],
+      "categories": [
+        "iot"
+      ],
+      "imageLayout": "atlas",
+      "image": "aseets/products.webp",
+      "imageAlt": "Node Project Box — Sage 3D printed product concept"
+    },
+    {
+      "id": "articulate-arm-parts",
+      "name": "Articulate Arm Parts",
+      "category": "robotics",
+      "subtitle": "Build a little movement into your next idea.",
+      "description": "A customizable printed parts concept for a desktop robotic arm: structural links, servo brackets and gripper components. Share your servo model, reach and mounting layout to shape the parts around your project.",
+      "price": 2800,
+      "material": "PETG",
+      "colors": [
+        {
+          "name": "Peach",
+          "hex": "#de7356"
+        },
+        {
+          "name": "Graphite",
+          "hex": "#41413e"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#dedbd3"
+        }
+      ],
+      "dimensions": "Custom sizing; example reach 180 mm",
+      "compatibility": "Confirm servo dimensions, shaft interface, fasteners, loads and motion clearance before printing.",
+      "includes": "Printed structural parts only. Servos, motors, electronics and fasteners are not included. Assembly shown as a concept.",
+      "features": [
+        "Customizable servo mounts",
+        "Modular linkage and gripper parts",
+        "Designed around your project"
+      ],
+      "image": "aseets/robotics.webp",
+      "badge": "Ideas in motion",
+      "featured": true,
+      "keywords": [
+        "robot",
+        "robotics",
+        "robotic",
+        "arm",
+        "servo",
+        "bracket",
+        "gripper",
+        "automation",
+        "parts"
+      ],
+      "categories": [
+        "robotics"
+      ],
+      "imageLayout": "single",
+      "imageAlt": "Articulate Arm Parts — Peach 3D printed product concept"
+    }
+  ]
+}

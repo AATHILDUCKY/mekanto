@@ -1,0 +1,43 @@
+{
+  "id": "adjustable-device-stand",
+  "name": "Adjustable Device Stand",
+  "subtitle": "Keep your screen at a comfortable angle.",
+  "description": "A compact printed stand for small devices. Share your device dimensions to customize the fit.",
+  "category": "desk",
+  "categories": [
+    "desk",
+    "iot"
+  ],
+  "keywords": [
+    "stand",
+    "phone",
+    "device",
+    "mount",
+    "desk",
+    "gadget"
+  ],
+  "image": "aseets/product-placeholder.svg",
+  "imageAlt": "Adjustable printed device stand",
+  "imageLayout": "single",
+  "price": 1200,
+  "material": "PETG",
+  "dimensions": "100 × 70 × 45 mm",
+  "colors": [
+    {
+      "name": "Peach",
+      "hex": "#de7356"
+    },
+    {
+      "name": "Graphite",
+      "hex": "#41413e"
+    }
+  ],
+  "features": [
+    "Compact footprint",
+    "Customizable fit"
+  ],
+  "compatibility": "Confirm device size before printing.",
+  "includes": "Printed stand only.",
+  "badge": "A better setup",
+  "featured": false
+}
