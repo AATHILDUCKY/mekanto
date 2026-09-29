@@ -1,6 +1,6 @@
 # Mekanto SEO
 
-The GitHub Pages workflow generates `sitemap.xml` and `robots.txt` inside the published site. The sitemap contains the homepage, shop, every category filter URL, every product URL, custom page, journal, every article and about page. It updates automatically whenever `products.json` or `posts.json` changes.
+The GitHub Pages workflow generates `sitemap.xml` and `robots.txt` inside the published site. The sitemap contains the homepage, shop, every category filter URL, every product URL, custom page, gallery, journal, every article and about page. It updates automatically whenever `products.json`, `posts.json` or `gallery.json` changes and the GitHub Actions workflow publishes the site.
 
 The current public domain is set in `products.json`:
 

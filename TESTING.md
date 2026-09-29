@@ -52,6 +52,17 @@ Final checks on 29 September 2026 also passed on both root hosting and `/mekanto
 
 ## SEO and crawlability
 
-The current staged deploy generated a valid XML sitemap with **18 public URLs**: home, shop, five category URLs, five product URLs, custom, journal, three articles and about. `robots.txt` points to `https://mekanto.com/sitemap.xml`. Sitemap checks verified every current category and product URL and verified that cart and 404 are excluded.
+The current staged deploy generated a valid XML sitemap with **23 public URLs**: home, shop, seven category URLs, seven product URLs, custom, gallery, journal, three articles and about. `robots.txt` points to `https://mekanto.com/sitemap.xml`. Sitemap checks verified every current category and product URL and verified that cart and 404 are excluded.
 
 Catalog validation now requires `store.siteUrl` to be a complete HTTPS URL. Static checks passed for `app.js`, catalog validation, SEO staging and the HTTP response for a product URL. Public templates include canonical, Open Graph, Twitter and index/follow tags; cart, 404 and legacy redirect pages are noindex. Runtime page metadata emits Organization, CollectionPage, Product, Blog and BlogPosting JSON-LD as appropriate.
+
+
+## Gallery
+
+Verified the gallery at 320, 375, 768, 800, 900, 1000 and 1440 pixels with no horizontal overflow. The clean `/gallery/` route and legacy `gallery.html` redirect work under a GitHub Pages repository prefix. The first batch contains exactly 10 images; intersection loading appends the next two 10-image batches and stops at 30 with a clear end state.
+
+Verified keyboard/button semantics, multi-selection, clearing, a 10-image limit and the fixed mobile action bar. The prepared WhatsApp message targets **94754545398** and contains the selected reference IDs, absolute image URLs and optional customer names. The gallery produced no browser exceptions and Axe WCAG 2 A/AA and 2.1 AA reported zero automated violations. The mobile and desktop gallery were visually inspected.
+
+## Wall décor and mobile stands
+
+Added seven-category responsive home navigation, two editorial collection cards, dedicated shop filters and complete product pages for Botanical Wall Triptych and Angle Charge Mobile Stand. Verified at 320, 390, 768 and 1440px with no horizontal overflow. Both optimized WebP assets loaded correctly; category filters returned the expected single product; product WhatsApp links and all four new sitemap URLs passed.

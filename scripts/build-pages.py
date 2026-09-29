@@ -11,7 +11,7 @@ from urllib.parse import urlparse, unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 ID = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
-ROUTES = ('shop', 'product', 'custom', 'blog', 'article', 'about', 'cart')
+ROUTES = ('shop', 'product', 'custom', 'gallery', 'blog', 'article', 'about', 'cart')
 PAGES = ('index', *ROUTES, '404')
 
 
@@ -45,7 +45,7 @@ def write_seo_files(output, catalog, posts):
     urls = [(f'{site_url}/', None), (f'{site_url}/shop/', None)]
     urls += [(f'{site_url}/shop/?category={item["id"]}', None) for item in catalog['categories']]
     urls += [(f'{site_url}/product/?id={item["id"]}', None) for item in catalog['products']]
-    urls += [(f'{site_url}/custom/', None), (f'{site_url}/blog/', None)]
+    urls += [(f'{site_url}/custom/', None), (f'{site_url}/gallery/', None), (f'{site_url}/blog/', None)]
     urls += [(f'{site_url}/article/?id={item["id"]}', item.get('date')) for item in posts]
     urls += [(f'{site_url}/about/', None)]
     entries = []
@@ -101,8 +101,22 @@ def validate_catalog():
         post_ids.add(pid)
         require(post.get('relatedCategory') in category_ids, f'{pid}: unknown relatedCategory.')
         check_image(post.get('image'), pid)
+    gallery = json.loads((ROOT / 'gallery.json').read_text())
+    require(gallery.get('schemaVersion') == 1 and isinstance(gallery.get('images'), list), 'gallery.json must contain schemaVersion 1 and an images array.')
+    gallery_ids = set()
+    gallery_images = set()
+    for item in gallery['images']:
+        gid = item.get('id', '')
+        require(ID.fullmatch(gid) and gid not in gallery_ids, f'Invalid or duplicate gallery ID: {gid}')
+        gallery_ids.add(gid)
+        require(isinstance(item.get('alt'), str) and item['alt'].strip(), f'{gid}: meaningful alt text is required.')
+        require(not item.get('customerName') or isinstance(item['customerName'], str), f'{gid}: customerName must be text when provided.')
+        image = item.get('image', '').strip()
+        require(image not in gallery_images, f'{gid}: duplicate gallery image: {image}')
+        gallery_images.add(image)
+        check_image(image, gid)
     public_site_url(data['store'])
-    return data, posts, len(products), len(categories)
+    return data, posts, len(products), len(categories), len(gallery_ids)
 
 
 def main():
@@ -112,9 +126,9 @@ def main():
     parser.add_argument('--check-only', action='store_true')
     args = parser.parse_args()
     try:
-        catalog, posts, products, categories = validate_catalog()
+        catalog, posts, products, categories, gallery_count = validate_catalog()
         if args.check_only:
-            print(f'Catalog valid: {products} products, {categories} categories.')
+            print(f'Catalog valid: {products} products, {categories} categories, {gallery_count} gallery images.')
             return
         output = Path(args.output).resolve()
         require(output != ROOT and not ROOT.is_relative_to(output), 'Choose a separate staging folder, not the project root or a parent.')
@@ -133,11 +147,11 @@ def main():
             target = output / name
             target.mkdir(exist_ok=True)
             shutil.copy2(source, target / 'index.html')
-        for name in ('app.js', 'styles.css', 'products.json', 'posts.json', 'products.schema.json', '.nojekyll'):
+        for name in ('app.js', 'styles.css', 'products.json', 'posts.json', 'gallery.json', 'products.schema.json', 'gallery.schema.json', '.nojekyll'):
             shutil.copy2(ROOT / name, output / name)
         shutil.copytree(ROOT / 'aseets', output / 'aseets', dirs_exist_ok=True)
         write_seo_files(output, catalog, posts)
-        print(f'Ready: {products} products, {categories} categories. Public files staged in {output}.')
+        print(f'Ready: {products} products, {categories} categories, {gallery_count} gallery images. Public files staged in {output}.')
     except (ValueError, OSError, json.JSONDecodeError) as error:
         parser.exit(1, f'Site preparation failed: {error}\n')
 

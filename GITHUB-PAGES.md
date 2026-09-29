@@ -4,7 +4,7 @@ The site is static HTML, CSS, JavaScript and JSON. It works at a repository URL 
 
 ## Recommended: included GitHub Actions workflow
 
-1. Create a GitHub repository and upload this folder's contents to its root. Include the `shop/`, `blog/`, `product/`, `article/`, `custom/`, `about/`, `cart/` and `aseets/` folders, plus hidden `.github` and `.nojekyll` files. `index.html` must be at the repository root, not inside another project folder.
+1. Create a GitHub repository and upload this folder's contents to its root. Include the `shop/`, `blog/`, `product/`, `article/`, `custom/`, `gallery/`, `about/`, `cart/` and `aseets/` folders, plus hidden `.github` and `.nojekyll` files. `index.html` must be at the repository root, not inside another project folder.
 2. Use a branch named `main`. If your branch has a different name, edit the `branches` value in `.github/workflows/pages.yml`.
 3. Open **Settings → Pages → Build and deployment → Source → GitHub Actions**.
 4. Open **Actions → Publish Mekanto to GitHub Pages → Run workflow**, or push a change to `main`.
@@ -12,7 +12,7 @@ The site is static HTML, CSS, JavaScript and JSON. It works at a repository URL 
 
 The workflow validates catalog data, stages public files in `.site`, generates `sitemap.xml` and `robots.txt`, uploads the artifact, and deploys it. The `github-pages` environment and normal GitHub permissions are used; no personal access token is needed. It follows [GitHub's custom Pages workflow guidance](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
-Public files include index.html, 404.html, the seven route folders with index.html entries, legacy .html redirect files, app.js, styles.css, products.json, posts.json, products.schema.json, .nojekyll and aseets/. Developer notes, examples, validation scripts and workflow source are not included in the deployment artifact.
+Public files include index.html, 404.html, the eight route folders with index.html entries, legacy .html redirect files, app.js, styles.css, products.json, posts.json, gallery.json, both JSON schemas, .nojekyll and aseets/. Developer notes, examples, validation scripts and workflow source are not included in the deployment artifact.
 
 ## Alternative: publish directly from a branch
 
@@ -47,6 +47,7 @@ The pages use real directories with an `index.html` file inside each:
 |---|---|---|
 | Shop | `/shop/` | `/YOUR-REPOSITORY/shop/` |
 | Blog | `/blog/` | `/YOUR-REPOSITORY/blog/` |
+| Gallery | `/gallery/` | `/YOUR-REPOSITORY/gallery/` |
 | Custom project | `/custom/` | `/YOUR-REPOSITORY/custom/` |
 | About | `/about/` | `/YOUR-REPOSITORY/about/` |
 | Cart | `/cart/` | `/YOUR-REPOSITORY/cart/` |

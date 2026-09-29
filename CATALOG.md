@@ -71,7 +71,7 @@ Add an object to the `categories` array:
 }
 ```
 
-Assign the category ID to the new product. Mobile navigation, homepage categories, shop filters and footer links update automatically. Useful existing icon names: `desk`, `chip`, `drone`, `robot`, `circuit`, `cube`, `tool`, `layers`. Unknown names use a cube.
+Assign the category ID to the new product. Mobile navigation, homepage categories, shop filters and footer links update automatically. Useful existing icon names: `desk`, `chip`, `drone`, `robot`, `circuit`, `wall`, `phone`, `cube`, `tool`, `layers`. Unknown names use a cube.
 
 ## Search and performance
 

@@ -51,6 +51,22 @@
       "description": "From breadboard to real world.",
       "icon": "circuit",
       "imagePosition": "100% 100%"
+    },
+    {
+      "id": "wall-decor",
+      "name": "Wall décor",
+      "shortName": "Wall décor",
+      "description": "Art made to belong in your room.",
+      "icon": "wall",
+      "image": "aseets/wall-decor.webp"
+    },
+    {
+      "id": "mobile-stands",
+      "name": "Mobile stands",
+      "shortName": "Mobile stands",
+      "description": "A better angle for your everyday.",
+      "icon": "phone",
+      "image": "aseets/mobile-stand.webp"
     }
   ],
   "products": [
@@ -295,6 +311,107 @@
       ],
       "imageLayout": "single",
       "imageAlt": "Articulate Arm Parts — Peach 3D printed product concept"
+    },
+    {
+      "id": "botanical-wall-triptych",
+      "name": "Botanical Wall Triptych",
+      "category": "wall-decor",
+      "subtitle": "A quieter wall, with a little more character.",
+      "description": "Three coordinated geometric botanical panels designed to bring depth and rhythm to a living room, workspace, or hallway. The lightweight printed relief creates soft shadows while keeping installation simple.",
+      "price": 4800,
+      "material": "PLA",
+      "colors": [
+        {
+          "name": "Graphite",
+          "hex": "#2f302d"
+        },
+        {
+          "name": "Peach",
+          "hex": "#de7356"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#dedbd3"
+        }
+      ],
+      "dimensions": "Each panel 360 × 120 × 8 mm",
+      "compatibility": "Designed for indoor walls. Confirm your preferred overall size, wall surface, spacing and mounting method before printing.",
+      "includes": "Three printed decorative panels. Wall fixings are selected separately to suit your wall surface.",
+      "features": [
+        "Coordinated three-panel composition",
+        "Lightweight dimensional relief",
+        "Custom sizing and color options"
+      ],
+      "image": "aseets/wall-decor.webp",
+      "badge": "For your room",
+      "featured": true,
+      "keywords": [
+        "wall decor",
+        "wall décor",
+        "room decor",
+        "wall art",
+        "botanical",
+        "leaf",
+        "triptych",
+        "home",
+        "interior",
+        "decoration"
+      ],
+      "categories": [
+        "wall-decor"
+      ],
+      "imageLayout": "single",
+      "imageAlt": "Three charcoal geometric botanical 3D printed wall décor panels in a warm modern room"
+    },
+    {
+      "id": "angle-charge-mobile-stand",
+      "name": "Angle Charge Mobile Stand",
+      "category": "mobile-stands",
+      "subtitle": "Your phone, comfortably in view.",
+      "description": "A compact sculptural stand that holds your phone at a useful viewing angle while guiding its charging cable through the base. Made for video calls, recipes, timers, and an uncluttered desk.",
+      "price": 950,
+      "material": "PLA",
+      "colors": [
+        {
+          "name": "Peach",
+          "hex": "#de7356"
+        },
+        {
+          "name": "Graphite",
+          "hex": "#41413e"
+        },
+        {
+          "name": "Chalk",
+          "hex": "#dedbd3"
+        }
+      ],
+      "dimensions": "95 × 82 × 105 mm",
+      "compatibility": "Fits many standard phones. Confirm phone width, thickness, case depth and charging-port position before ordering.",
+      "includes": "One printed stand. Phone and charging cable are not included.",
+      "features": [
+        "Comfortable viewing angle",
+        "Integrated charging-cable channel",
+        "Stable compact base"
+      ],
+      "image": "aseets/mobile-stand.webp",
+      "badge": "Desk-ready",
+      "featured": true,
+      "keywords": [
+        "mobile stand",
+        "phone stand",
+        "phone holder",
+        "charging stand",
+        "desk stand",
+        "smartphone",
+        "holder",
+        "mobile"
+      ],
+      "categories": [
+        "mobile-stands",
+        "desk"
+      ],
+      "imageLayout": "single",
+      "imageAlt": "Peach 3D printed charging mobile stand holding a graphite smartphone"
     }
   ]
 }

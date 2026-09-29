@@ -33,13 +33,30 @@ Customers review the prepared message and tap Send in WhatsApp. The website does
 - [examples/product.json](examples/product.json): copyable product entry.
 - [products.schema.json](products.schema.json): editor validation and completion.
 - [posts.json](posts.json): journal headings and ordinary paragraphs. The first post is featured.
+- [gallery.json](gallery.json): gallery image links and optional customer names.
+- [gallery.schema.json](gallery.schema.json): editor validation for gallery entries.
 - [SEO.md](SEO.md): sitemap, crawlability and public-domain setup.
 
 Navigation categories and footer category links update automatically. New products may belong to several categories. Keyword search is indexed once. Missing product images receive a local fallback.
 
+## Edit the gallery
+
+`gallery.json` is the gallery source. Images appear without visible captions; `alt` describes each image for accessibility, and `customerName` is optional. The first 10 images load immediately. Reaching the end loads the next 10 until the JSON list is complete.
+
+```json
+{
+  "id": "custom-sensor-case-01",
+  "image": "aseets/gallery/custom-sensor-case.webp",
+  "alt": "Sage printed enclosure for an indoor sensor",
+  "customerName": "Customer name"
+}
+```
+
+Use a unique lowercase `id`, a unique relative local image path or complete HTTPS link, and meaningful `alt` text. Reusing the same image link is rejected during validation. Omit `customerName` when it should not be stored or shared, and publish a customer's name only with their permission. The gallery preserves each source image’s natural proportions, so portrait, square and landscape files form a varied masonry layout without cropping. Selecting an image sends its ID, image URL and optional customer name to WhatsApp as a reference. Up to 10 images can be selected at once.
+
 ## Shared application
 
-`index.html`, the route folders (`shop/`, `product/`, `custom/`, `blog/`, `article/`, `about/`, `cart/`) and the required root `404.html` share `app.js`, `styles.css`, and assets in `aseets/`. Each route folder contains its own `index.html`; page URLs are `/shop/`, `/blog/`, and so on. Product links use `/product/?id=PRODUCT-ID`; articles use `/article/?id=POST-ID`. The site keeps its GitHub repository prefix automatically. Old root `.html` URLs redirect to the clean page while preserving query parameters and fragments. No SPA rewrite is required.
+`index.html`, the route folders (`shop/`, `product/`, `custom/`, `gallery/`, `blog/`, `article/`, `about/`, `cart/`) and the required root `404.html` share `app.js`, `styles.css`, and assets in `aseets/`. Each route folder contains its own `index.html`; page URLs are `/shop/`, `/gallery/`, `/blog/`, and so on. Product links use `/product/?id=PRODUCT-ID`; articles use `/article/?id=POST-ID`. The site keeps its GitHub repository prefix automatically. Old root `.html` URLs redirect to the clean page while preserving query parameters and fragments. No SPA rewrite is required.
 
 ## Image-generation prompts
 

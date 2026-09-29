@@ -1,0 +1,41 @@
+{
+  "$schema": "./gallery.schema.json",
+  "schemaVersion": 1,
+  "images": [
+    {
+      "id": "maker-collection-01",
+      "image": "aseets/maker-hero.webp",
+      "alt": "FPV drone frame, robotic arm and IoT enclosure in the Mekanto studio"
+    },
+    {
+      "id": "robotic-arm-01",
+      "image": "aseets/robotics.webp",
+      "alt": "Peach 3D printed robotic arm components"
+    },
+    {
+      "id": "iot-enclosure-01",
+      "image": "aseets/iot.webp",
+      "alt": "Sage 3D printed IoT enclosure with electronics"
+    },
+    {
+      "id": "desk-objects-01",
+      "image": "aseets/hero.webp",
+      "alt": "Peach desk accessories and graphite electronics enclosure"
+    },
+    {
+      "id": "product-collection-01",
+      "image": "aseets/products.webp",
+      "alt": "Mekanto collection of 3D printed cases, organizers, drone and IoT parts"
+    },
+    {
+      "id": "botanical-wall-decor-01",
+      "image": "aseets/wall-decor.webp",
+      "alt": "Charcoal geometric botanical wall décor triptych in a warm modern room"
+    },
+    {
+      "id": "mobile-stand-01",
+      "image": "aseets/mobile-stand.webp",
+      "alt": "Peach 3D printed charging mobile stand on a warm ivory desk"
+    }
+  ]
+}
