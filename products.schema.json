@@ -108,17 +108,11 @@
       "type": "object",
       "required": [
         "id",
-        "name",
-        "description",
+        "title",
         "category",
-        "price",
-        "keywords",
-        "image"
+        "price"
       ],
       "properties": {
-        "name": {
-          "type": "string"
-        },
         "subtitle": {
           "type": "string"
         },
@@ -165,12 +159,13 @@
           "items": {
             "type": "string"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "description": "Optional extra search terms. Title, description and category are searchable automatically."
         },
         "image": {
           "type": "string",
           "minLength": 1,
-          "description": "A relative asset path or complete HTTPS image URL. Relative paths work on GitHub Pages project sites."
+          "description": "Optional relative asset path or complete HTTPS image URL. If omitted, a placeholder is shown."
         },
         "imageLayout": {
           "enum": [
@@ -218,6 +213,11 @@
             },
             "additionalProperties": false
           }
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Product name shown on the site and in search results."
         }
       },
       "additionalProperties": false

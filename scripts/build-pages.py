@@ -77,16 +77,19 @@ def validate_catalog():
         pid = product.get('id', '')
         require(ID.fullmatch(pid) and pid not in product_ids, f'Invalid or duplicate product ID: {pid}')
         product_ids.add(pid)
-        for field in ('name', 'description', 'category'):
+        for field in ('title', 'category'):
             require(isinstance(product.get(field), str) and product[field].strip(), f'{pid}: {field} is required.')
+        if 'description' in product:
+            require(isinstance(product['description'], str), f'{pid}: description must be text.')
         require(product['category'] in category_ids, f'{pid}: unknown primary category.')
         extra = product.get('categories', [])
         require(isinstance(extra, list) and all(c in category_ids for c in extra), f'{pid}: categories must contain existing category IDs.')
         price = product.get('price')
         require(isinstance(price, (int, float)) and not isinstance(price, bool) and math.isfinite(price) and price >= 0, f'{pid}: price must be a non-negative number.')
-        keywords = product.get('keywords')
+        keywords = product.get('keywords', [])
         require(isinstance(keywords, list) and all(isinstance(k, str) for k in keywords), f'{pid}: keywords must be an array of strings.')
-        check_image(product.get('image'), pid)
+        if 'image' in product:
+            check_image(product['image'], pid)
         require(product.get('imageLayout', 'single') in ('single', 'atlas'), f'{pid}: imageLayout must be single or atlas.')
         if product.get('imageLayout') == 'atlas':
             require(product.get('imagePosition') in ('0% 0%', '100% 0%', '0% 100%', '100% 100%'), f'{pid}: atlas imagePosition must identify a quadrant.')

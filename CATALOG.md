@@ -1,85 +1,43 @@
 # Edit the Mekanto catalog
 
-`products.json` is the single source of store settings, categories and products. It has a linked JSON Schema (`products.schema.json`) for editor completion and validation. The optional staging script checks IDs, category references, prices, keywords and image paths before GitHub Pages publication.
+Edit `products.json` to manage products. Keep the store settings and categories at the top; add product entries inside `products`.
 
 ## Add a product
 
-Copy [examples/product.json](examples/product.json) into the `products` array in `products.json`, separated from the previous entry by a comma. Change the ID, description, category, price, keywords and image link. Do not leave a comma after the last entry.
-
-A compact entry works too:
+Copy `examples/product.json` into the `products` array, with a comma between entries. A new product only needs four fields:
 
 ```json
 {
   "id": "device-stand",
-  "name": "Device Stand",
-  "description": "A compact printed stand for a phone or small display.",
+  "title": "Device Stand",
   "category": "desk",
-  "categories": ["desk", "iot"],
-  "keywords": ["phone", "stand", "display", "mount", "gadget"],
-  "image": "aseets/device-stand.webp",
-  "imageAlt": "Peach 3D printed phone stand",
-  "price": 1200,
-  "material": "PETG",
-  "colors": [
-    {"name": "Peach", "hex": "#de7356"},
-    {"name": "Graphite", "hex": "#41413e"}
-  ]
+  "price": 1200
 }
 ```
 
-Provide your own image file for the example link. If you need a temporary image, use `aseets/product-placeholder.svg`.
+`id` is a unique lowercase slug with hyphens. Keep it stable because product links and saved carts use it. `title` is the product name shown on the site. `category` must match a category ID above. `price` is a number in LKR, without a currency symbol.
 
-## Field reference
-
-| Field | Meaning |
-|---|---|
-| `id` | Required unique lowercase ID with hyphens. Keep it stable for product links and saved carts. |
-| `name` | Required product name. |
-| `description` | Required plain-language description. Plain text, not HTML. |
-| `category` | Required primary category ID. This is the label shown on cards. |
-| `categories` | Optional additional category IDs. The product is discoverable in each category. |
-| `keywords` | Required array of search terms, synonyms and hardware names. |
-| `image` | Required relative image path or full HTTPS image URL. |
-| `imageAlt` | Recommended meaningful description of the image. |
-| `price` | Required non-negative number in `store.currency`, without a currency symbol. |
-| `material` | Optional material label; defaults to “To discuss”. |
-| `colors` | Optional color objects with `name` and six-digit `hex`. A standard finish is used if omitted. |
-| `subtitle` | Optional short product benefit. |
-| `dimensions` | Optional readable dimensions; defaults to custom sizing. |
-| `compatibility` | Optional board, mounting and fit information. |
-| `includes` | Optional description of the supplied parts. |
-| `features` | Optional array of short feature statements. |
-| `badge` | Optional card label. |
-| `featured` | Optional true/false; featured entries can appear in the homepage's four-card collection. |
-| `imageLayout` | Normally omitted or `single`. `atlas` is only for the existing contact sheet. |
-| `imagePosition` | Atlas quadrant only: `0% 0%`, `100% 0%`, `0% 100%`, or `100% 100%`. |
-
-Image links support `aseets/my-photo.webp`, `./aseets/my-photo.webp`, or `https://images.example.com/my-photo.webp`. Relative paths preserve GitHub project-site hosting. Use WebP/AVIF where practical. Product images load lazily, keep a stable footprint, and show a neutral fallback if an image cannot load.
-
-Existing `tags` entries are accepted by the browser for backward compatibility, but use `keywords` for all new entries.
-
-## Add a category
-
-Add an object to the `categories` array:
+Add these when ready:
 
 ```json
 {
-  "id": "device-mounts",
-  "name": "Device mounts",
-  "description": "A place for your device.",
-  "icon": "cube"
+  "id": "device-stand",
+  "title": "Device Stand",
+  "category": "desk",
+  "price": 1200,
+  "description": "A compact printed stand for small devices.",
+  "image": "https://example.com/device-stand.webp",
+  "keywords": ["phone stand", "desk accessory"]
 }
 ```
 
-Assign the category ID to the new product. Mobile navigation, homepage categories, shop filters and footer links update automatically. Useful existing icon names: `desk`, `chip`, `drone`, `robot`, `circuit`, `wall`, `phone`, `cube`, `tool`, `layers`. Unknown names use a cube.
+`image` can be a complete HTTPS URL or a path to a file in this site, such as `aseets/device-stand.webp`. If omitted, the site shows its neutral placeholder. If `description` is omitted, the site uses a short generic sentence. Search already checks the title, description, category and material, so `keywords` is only for extra terms or synonyms.
 
-## Search and performance
+Optional fields for products include `featured` (show on the homepage), `imageAlt`, `subtitle`, `material`, `dimensions`, `compatibility`, `includes`, `features`, `badge`, and `colors`. `categories` can list additional category IDs. The existing shared image sheet uses `imageLayout: "atlas"` and `imagePosition` to select a quadrant; individual photos need neither.
 
-Search indexes are built once when the JSON loads. Queries match the name, subtitle, description, material, all assigned category names and keywords. Accents, punctuation and hyphens are normalized, so terms such as `servo-mount` remain easy to find. Product and category IDs use maps for lookups. Multiple-category filtering works without duplicate cards in the All objects view.
+## Add a category
 
-## Store settings
-
-`store.whatsappNumber` is `94754545398` and `store.whatsappDisplay` is `075 454 5398`. WhatsApp uses digits in international format. Currency and locale are currently `LKR` and `en-LK`. Confirm real prices and compatibility before publishing; the included products are still sample concepts.
+Add an entry inside `categories` with a unique `id` and a `name`. You can also add `description` and `icon`. Products must use that category ID. Navigation and filters update automatically.
 
 ## Check your edits
 
@@ -87,4 +45,4 @@ Search indexes are built once when the JSON loads. Queries match the name, subti
 python3 scripts/build-pages.py --check-only
 ```
 
-This reports a clear error for duplicate IDs, unknown categories, invalid pricing, missing local images or malformed keywords. A GitHub Actions build runs the same checks before publishing.
+The validator checks IDs, category references, prices and any image or keyword fields you supplied. `products.schema.json` provides editor validation and completion. The same checks run when GitHub Pages publishes the site.

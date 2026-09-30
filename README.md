@@ -92,7 +92,7 @@ Premium studio product photograph of a compact sage green #8F9C83 3D printed ele
 Premium custom 3D printing storefront feature photograph, landscape 16:10 composition. Arrange a charcoal FPV drone frame, peach-orange #DE7356 robotic arm parts, a sage green IoT enclosure and one useful desk gadget on a warm ivory studio surface. Keep the arrangement realistic, compact and beautifully spaced, with soft long afternoon shadows, matte FDM print layers and refined industrial design art direction. Leave clean negative space on the [LEFT OR RIGHT] third for website copy. No text, logos, watermarks, people, UI, borders or clutter. High-detail, photorealistic product photography.
 ```
 
-Save product photos as WebP in `aseets/`, use a square image where possible, then set the relative image path and meaningful `imageAlt` text in `products.json`. See [CATALOG.md](CATALOG.md) for the product fields and [DESIGN-NOTES.md](DESIGN-NOTES.md) for the original image references.
+When you have a product photo, save it as WebP in `aseets/` or use a complete HTTPS image URL in `products.json`. A square image and meaningful `imageAlt` text are recommended. See [CATALOG.md](CATALOG.md) for the product fields and [DESIGN-NOTES.md](DESIGN-NOTES.md) for the original image references.
 
 ## Lightweight assets
 
