@@ -3,6 +3,66 @@
   "schemaVersion": 1,
   "images": [
     {
+      "id": "custom-design-showcase",
+      "image": "aseets/products/cutouts/custom-design-showcase.webp",
+      "alt": "Mekanto custom 3D printed vases, desk accessories, enclosures and robotic arm"
+    },
+    {
+      "id": "desk-cable-holder-poster",
+      "image": "aseets/products/cutouts/desk-cable-holder.webp",
+      "alt": "Desk Cable Holder — Mekanto 3D printing design"
+    },
+    {
+      "id": "robotic-arm-poster",
+      "image": "aseets/products/cutouts/robotic-arm.webp",
+      "alt": "Custom Robotic Arm — Mekanto 3D printing design"
+    },
+    {
+      "id": "floral-wall-decor-poster",
+      "image": "aseets/products/cutouts/floral-wall-decor.webp",
+      "alt": "Floral Wall Décor — Mekanto 3D printing design"
+    },
+    {
+      "id": "pi-zero-pink-case-poster",
+      "image": "aseets/products/cutouts/pi-zero-pink-case.webp",
+      "alt": "Raspberry Pi Zero 2 W Pink Case — Mekanto 3D printing design"
+    },
+    {
+      "id": "arduino-uno-case-poster",
+      "image": "aseets/products/cutouts/arduino-uno-case.webp",
+      "alt": "Arduino Uno Case — Mekanto 3D printing design"
+    },
+    {
+      "id": "clamp-on-desk-hook-poster",
+      "image": "aseets/products/cutouts/clamp-on-desk-hook.webp",
+      "alt": "Clamp-on Desk Hook — Mekanto 3D printing design"
+    },
+    {
+      "id": "esp32-super-mini-cases-poster",
+      "image": "aseets/products/cutouts/esp32-super-mini-cases.webp",
+      "alt": "ESP32 Super Mini Cases — Mekanto 3D printing design"
+    },
+    {
+      "id": "pi-zero-honeycomb-case-poster",
+      "image": "aseets/products/cutouts/pi-zero-honeycomb-case.webp",
+      "alt": "Raspberry Pi Zero 2 W Honeycomb Case — Mekanto 3D printing design"
+    },
+    {
+      "id": "ottoky-robot-poster",
+      "image": "aseets/products/cutouts/ottoky-robot.webp",
+      "alt": "Ottoky Custom Robot — Mekanto 3D printing design"
+    },
+    {
+      "id": "pi-zero-heatsink-case-poster",
+      "image": "aseets/products/cutouts/pi-zero-heatsink-case.webp",
+      "alt": "Raspberry Pi Zero 2 W Heatsink Case — Mekanto 3D printing design"
+    },
+    {
+      "id": "pi-zero-orange-case-poster",
+      "image": "aseets/products/cutouts/pi-zero-orange-case.webp",
+      "alt": "Raspberry Pi Zero 2 W Orange Case — Mekanto 3D printing design"
+    },
+    {
       "id": "maker-collection-01",
       "image": "aseets/maker-hero.webp",
       "alt": "FPV drone frame, robotic arm and IoT enclosure in the Mekanto studio"

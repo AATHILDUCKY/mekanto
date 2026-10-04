@@ -4,18 +4,17 @@ Edit `products.json` to manage products. Keep the store settings and categories 
 
 ## Add a product
 
-Copy `examples/product.json` into the `products` array, with a comma between entries. A new product only needs four fields:
+Copy `examples/product.json` into the `products` array, with a comma between entries. A new product only needs three fields:
 
 ```json
 {
   "id": "device-stand",
   "title": "Device Stand",
-  "category": "desk",
-  "price": 1200
+  "category": "desk"
 }
 ```
 
-`id` is a unique lowercase slug with hyphens. Keep it stable because product links and saved carts use it. `title` is the product name shown on the site. `category` must match a category ID above. `price` is a number in LKR, without a currency symbol.
+`id` is a unique lowercase slug with hyphens. Keep it stable because product links and saved carts use it. `title` is the product name shown on the site. `category` must match a category ID above. Prices are not displayed; customers request a quote on WhatsApp.
 
 Add these when ready:
 
@@ -24,7 +23,6 @@ Add these when ready:
   "id": "device-stand",
   "title": "Device Stand",
   "category": "desk",
-  "price": 1200,
   "description": "A compact printed stand for small devices.",
   "image": "https://example.com/device-stand.webp",
   "keywords": ["phone stand", "desk accessory"]
@@ -45,4 +43,12 @@ Add an entry inside `categories` with a unique `id` and a `name`. You can also a
 python3 scripts/build-pages.py --check-only
 ```
 
-The validator checks IDs, category references, prices and any image or keyword fields you supplied. `products.schema.json` provides editor validation and completion. The same checks run when GitHub Pages publishes the site.
+The validator checks IDs, category references, optional prices and any image or keyword fields you supplied. `products.schema.json` provides editor validation and completion. The same checks run when GitHub Pages publishes the site.
+
+## Supplied product posters
+
+The original PNGs remain in `aseets/products/`. Run `python3 scripts/optimize-products.py` (requires Pillow) to regenerate 480px and 960px WebPs in `aseets/products/optimized/`. Use `imageLayout: "poster"` to display the full poster without cropping. The deployment stages optimized assets and excludes the source posters.
+
+## Product-only images
+
+Generated transparent source PNGs are saved in `aseets/products/generated/`; optimized square WebPs live in `aseets/products/cutouts/`. Run `python3 scripts/optimize-products.py --cutouts` to rebuild their 480px and 960px versions while preserving alpha. Use `imageLayout: "cutout"` for square product cards and responsive images. The catalog and gallery use these clean images instead of the supplied posters. Source PNGs are excluded from deployment; the originals remain available locally. Generation prompts are recorded in `scripts/product-image-prompts.json`.

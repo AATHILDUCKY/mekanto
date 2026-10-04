@@ -85,12 +85,12 @@ def validate_catalog():
         extra = product.get('categories', [])
         require(isinstance(extra, list) and all(c in category_ids for c in extra), f'{pid}: categories must contain existing category IDs.')
         price = product.get('price')
-        require(isinstance(price, (int, float)) and not isinstance(price, bool) and math.isfinite(price) and price >= 0, f'{pid}: price must be a non-negative number.')
+        require('price' not in product or (isinstance(price, (int, float)) and not isinstance(price, bool) and math.isfinite(price) and price >= 0), f'{pid}: price must be a non-negative number.')
         keywords = product.get('keywords', [])
         require(isinstance(keywords, list) and all(isinstance(k, str) for k in keywords), f'{pid}: keywords must be an array of strings.')
         if 'image' in product:
             check_image(product['image'], pid)
-        require(product.get('imageLayout', 'single') in ('single', 'atlas'), f'{pid}: imageLayout must be single or atlas.')
+        require(product.get('imageLayout', 'single') in ('single', 'atlas', 'poster', 'cutout'), f'{pid}: imageLayout must be single, atlas, poster or cutout.')
         if product.get('imageLayout') == 'atlas':
             require(product.get('imagePosition') in ('0% 0%', '100% 0%', '0% 100%', '100% 100%'), f'{pid}: atlas imagePosition must identify a quadrant.')
         for color in product.get('colors', []):
@@ -152,7 +152,13 @@ def main():
             shutil.copy2(source, target / 'index.html')
         for name in ('app.js', 'styles.css', 'products.json', 'posts.json', 'gallery.json', 'products.schema.json', 'gallery.schema.json', '.nojekyll'):
             shutil.copy2(ROOT / name, output / name)
-        shutil.copytree(ROOT / 'aseets', output / 'aseets', dirs_exist_ok=True)
+        def skip_source_images(directory, names):
+            if Path(directory) == ROOT / 'aseets/products':
+                return [name for name in names if name in ('generated', 'optimized') or name.lower().endswith('.png')]
+            return []
+        shutil.copytree(ROOT / 'aseets', output / 'aseets', dirs_exist_ok=True, ignore=skip_source_images)
+        if (ROOT / 'CNAME').is_file():
+            shutil.copy2(ROOT / 'CNAME', output / 'CNAME')
         write_seo_files(output, catalog, posts)
         print(f'Ready: {products} products, {categories} categories, {gallery_count} gallery images. Public files staged in {output}.')
     except (ValueError, OSError, json.JSONDecodeError) as error:

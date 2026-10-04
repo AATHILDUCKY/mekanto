@@ -5,8 +5,8 @@
     "name": "Mekanto",
     "currency": "LKR",
     "locale": "en-LK",
-    "sampleCatalog": true,
-    "notice": "A preview collection. Prices, dimensions, compatibility and availability are examples to confirm with Mekanto before ordering.",
+    "sampleCatalog": false,
+    "notice": "Made to order. Contact Mekanto to confirm dimensions, compatibility, colors and availability for your build.",
     "whatsappNumber": "94754545398",
     "whatsappDisplay": "075 454 5398",
     "siteUrl": "https://mekanto.com"
@@ -57,10 +57,185 @@
   ],
   "products": [
     {
+      "id": "pi-zero-pink-case",
+      "title": "Raspberry Pi Zero 2 W Pink Case",
+      "category": "raspberry-pi",
+      "description": "A pastel pink enclosure design with an open honeycomb pattern for a colorful Raspberry Pi Zero 2 W project.",
+      "image": "aseets/products/cutouts/pi-zero-pink-case.webp",
+      "imageLayout": "cutout",
+      "imageAlt": "Raspberry Pi Zero 2 W Pink Case — isolated 3D printed product",
+      "featured": true,
+      "colors": [
+        {
+          "name": "Pastel pink",
+          "hex": "#e9a9b0"
+        }
+      ]
+    },
+    {
+      "id": "loop-cable-organizer",
+      "title": "Desk Cable Holder",
+      "category": "desk",
+      "description": "An orange desk-edge cable holder that keeps charging leads organized and within reach.",
+      "image": "aseets/products/cutouts/desk-cable-holder.webp",
+      "featured": true,
+      "imageLayout": "cutout",
+      "imageAlt": "Desk Cable Holder — isolated 3D printed product",
+      "colors": [
+        {
+          "name": "Orange",
+          "hex": "#eb6a24"
+        }
+      ]
+    },
+    {
+      "id": "articulate-arm-parts",
+      "title": "Custom Robotic Arm",
+      "category": "robotics",
+      "description": "A blue 3D printed robotic arm design with servo mounts and a gripper. Share your hardware and movement requirements to plan your build.",
+      "image": "aseets/products/cutouts/robotic-arm.webp",
+      "featured": true,
+      "imageLayout": "cutout",
+      "imageAlt": "Custom Robotic Arm — isolated 3D printed product",
+      "colors": [
+        {
+          "name": "Blue",
+          "hex": "#346ca6"
+        }
+      ]
+    },
+    {
+      "id": "botanical-wall-triptych",
+      "title": "Floral Wall Décor",
+      "category": "wall-decor",
+      "description": "A sculptural floral wall decoration with curling stems and layered petals. Customize the size and finish for your space.",
+      "image": "aseets/products/cutouts/floral-wall-decor.webp",
+      "featured": true,
+      "imageLayout": "cutout",
+      "imageAlt": "Floral Wall Décor — isolated 3D printed product",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#272725"
+        }
+      ]
+    },
+    {
+      "id": "arduino-uno-case",
+      "title": "Arduino Uno Case",
+      "category": "iot",
+      "description": "A blue enclosure design for Arduino Uno projects with access to board connections. Confirm your board revision and port layout before printing.",
+      "image": "aseets/products/cutouts/arduino-uno-case.webp",
+      "imageLayout": "cutout",
+      "imageAlt": "Arduino Uno Case — isolated 3D printed product",
+      "featured": false,
+      "colors": [
+        {
+          "name": "Blue",
+          "hex": "#586799"
+        }
+      ]
+    },
+    {
+      "id": "clamp-on-desk-hook",
+      "title": "Clamp-on Desk Hook",
+      "category": "desk",
+      "description": "An orange clamp-on hook for keeping headphones and everyday accessories close to your desk. Share your desktop thickness to confirm the fit.",
+      "image": "aseets/products/cutouts/clamp-on-desk-hook.webp",
+      "imageLayout": "cutout",
+      "imageAlt": "Clamp-on Desk Hook — isolated 3D printed product",
+      "featured": true,
+      "colors": [
+        {
+          "name": "Orange",
+          "hex": "#eb6a24"
+        }
+      ]
+    },
+    {
+      "id": "esp32-super-mini-cases",
+      "title": "ESP32 Super Mini Cases",
+      "category": "iot",
+      "description": "Compact enclosure designs for ESP32 Super Mini projects. Discuss your board variant, connectors and wiring layout for a custom fit.",
+      "image": "aseets/products/cutouts/esp32-super-mini-cases.webp",
+      "imageLayout": "cutout",
+      "imageAlt": "ESP32 Super Mini Cases — isolated 3D printed product",
+      "featured": true,
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#eeeae2"
+        }
+      ]
+    },
+    {
+      "id": "pi-zero-honeycomb-case",
+      "title": "Raspberry Pi Zero 2 W Honeycomb Case",
+      "category": "raspberry-pi",
+      "description": "A yellow honeycomb enclosure design for Raspberry Pi Zero 2 W projects, with openings around the board connections.",
+      "image": "aseets/products/cutouts/pi-zero-honeycomb-case.webp",
+      "imageLayout": "cutout",
+      "imageAlt": "Raspberry Pi Zero 2 W Honeycomb Case — isolated 3D printed product",
+      "featured": false,
+      "colors": [
+        {
+          "name": "Yellow",
+          "hex": "#edcd25"
+        }
+      ]
+    },
+    {
+      "id": "ottoky-robot",
+      "title": "Ottoky Custom Robot",
+      "category": "robotics",
+      "description": "A custom 3D printed robot design with a compact body and expressive display. Discuss printed parts, electronics and assembly for your project.",
+      "image": "aseets/products/cutouts/ottoky-robot.webp",
+      "imageLayout": "cutout",
+      "imageAlt": "Ottoky Custom Robot — isolated 3D printed product",
+      "featured": true,
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#eeeae2"
+        }
+      ]
+    },
+    {
+      "id": "pi-zero-heatsink-case",
+      "title": "Raspberry Pi Zero 2 W Heatsink Case",
+      "category": "raspberry-pi",
+      "description": "A white enclosure design with heatsink and GPIO cutouts for Raspberry Pi Zero 2 W projects. Confirm your cooling hardware and header layout.",
+      "image": "aseets/products/cutouts/pi-zero-heatsink-case.webp",
+      "imageLayout": "cutout",
+      "imageAlt": "Raspberry Pi Zero 2 W Heatsink Case — isolated 3D printed product",
+      "featured": false,
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#eeeae2"
+        }
+      ]
+    },
+    {
+      "id": "pi-zero-orange-case",
+      "title": "Raspberry Pi Zero 2 W Orange Case",
+      "category": "raspberry-pi",
+      "description": "A bright orange custom enclosure design with honeycomb ventilation for Raspberry Pi Zero 2 W projects.",
+      "image": "aseets/products/cutouts/pi-zero-orange-case.webp",
+      "imageLayout": "cutout",
+      "imageAlt": "Raspberry Pi Zero 2 W Orange Case — isolated 3D printed product",
+      "featured": false,
+      "colors": [
+        {
+          "name": "Orange",
+          "hex": "#eb6a24"
+        }
+      ]
+    },
+    {
       "id": "pi-5-air-case",
       "title": "Pi 5 Air Case",
       "category": "raspberry-pi",
-      "price": 1850,
       "description": "A compact, ventilated enclosure concept that keeps your Raspberry Pi project tidy and its connections within reach. Made for a desktop setup, a small home server, or your next weekend experiment.",
       "image": "aseets/products.webp",
       "featured": true,
@@ -68,21 +243,9 @@
       "imagePosition": "0% 0%"
     },
     {
-      "id": "loop-cable-organizer",
-      "title": "Loop Cable Organizer",
-      "category": "desk",
-      "price": 650,
-      "description": "Three simple arches give loose charging cables a place to live. A small, sculptural detail for the edge of your desk, your bedside table, or wherever cables tend to disappear.",
-      "image": "aseets/products.webp",
-      "featured": true,
-      "imageLayout": "atlas",
-      "imagePosition": "100% 0%"
-    },
-    {
       "id": "scout-drone-frame",
       "title": "Scout FPV Frame",
       "category": "drones",
-      "price": 3200,
       "description": "An open-frame concept for experimenting with quadcopter layouts and component placement. A practical starting point for bench prototypes and learning projects, with room to adapt mounting points to your hardware.",
       "image": "aseets/products.webp",
       "featured": true,
@@ -93,37 +256,15 @@
       "id": "node-project-box",
       "title": "Node Project Box",
       "category": "iot",
-      "price": 1450,
       "description": "A considered enclosure concept for sensor nodes and microcontroller projects. Internal mounting posts and a removable lid help turn a loose collection of wires into a tidy, approachable object.",
       "image": "aseets/products.webp",
       "imageLayout": "atlas",
       "imagePosition": "100% 100%"
     },
     {
-      "id": "articulate-arm-parts",
-      "title": "Articulate Arm Parts",
-      "category": "robotics",
-      "price": 2800,
-      "description": "A customizable printed parts concept for a desktop robotic arm: structural links, servo brackets and gripper components. Share your servo model, reach and mounting layout to shape the parts around your project.",
-      "image": "aseets/robotics.webp",
-      "featured": true,
-      "imageLayout": "single"
-    },
-    {
-      "id": "botanical-wall-triptych",
-      "title": "Botanical Wall Triptych",
-      "category": "wall-decor",
-      "price": 4800,
-      "description": "Three coordinated geometric botanical panels designed to bring depth and rhythm to a living room, workspace, or hallway. The lightweight printed relief creates soft shadows while keeping installation simple.",
-      "image": "aseets/wall-decor.webp",
-      "featured": true,
-      "imageLayout": "single"
-    },
-    {
       "id": "angle-charge-mobile-stand",
       "title": "Angle Charge Mobile Stand",
       "category": "mobile-stands",
-      "price": 950,
       "description": "A compact sculptural stand that holds your phone at a useful viewing angle while guiding its charging cable through the base. Made for video calls, recipes, timers, and an uncluttered desk.",
       "image": "aseets/mobile-stand.webp",
       "featured": true,

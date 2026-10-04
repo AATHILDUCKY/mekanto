@@ -12,6 +12,16 @@ Open **http://localhost:8080**. JSON content needs an HTTP server; do not double
 
 ## Publish on GitHub Pages
 
+To prepare one upload folder with the complete website and optimized images, run:
+
+```sh
+python3 scripts/build-pages.py --output github-pages
+```
+
+Upload the **contents** of `github-pages/` to your GitHub repository root and select **Settings → Pages → Deploy from a branch → main → / (root)**. This folder is a ready-to-publish static site: homepage, existing routes, shared styles/scripts, catalogs, transparent product images, sitemap, robots.txt and the existing custom-domain CNAME. Image source PNGs and unused posters stay outside the upload folder. Images appear within the existing website; they do not have separate HTML pages.
+
+For a repository URL without the custom domain, remove `CNAME` from the upload folder and build with `--base-path /YOUR-REPOSITORY` so nested 404 pages resolve correctly.
+
 The included `.github/workflows/pages.yml` validates the catalog and publishes the static site. Upload this folder's contents to the repository root, then choose **Settings → Pages → Source → GitHub Actions** and push to `main` or run the workflow manually.
 
 See [GITHUB-PAGES.md](GITHUB-PAGES.md) for complete deployment and project-path preview instructions. See [SEO.md](SEO.md) for sitemap, canonical URL and Google Search Console guidance. Relative links support both repository URLs and custom domains. No frontend build tool, npm runtime package, backend or API key is required.

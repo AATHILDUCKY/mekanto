@@ -79,3 +79,14 @@
 @media(max-width:1000px){.new-collection-grid{grid-template-columns:1fr 1fr;margin-top:48px}.new-collection-card{min-height:430px}.new-collection-copy{left:22px;right:22px;bottom:22px}}
 @media(max-width:760px){.new-collection-grid{grid-template-columns:1fr;gap:10px;margin-top:38px}.new-collection-card{min-height:410px}.new-collection-copy{left:21px;right:21px;bottom:21px}.new-collection-copy>strong,.collection-mobile .new-collection-copy>strong{font-size:31px}.new-collection-card:hover>img{transform:none}}
 @media(prefers-reduced-motion:reduce){.new-collection-card>img{transition:none}.new-collection-card:hover>img{transform:none}}
+
+/* Fill product cards edge to edge; keep full posters on product details. */
+.product-image-frame.product-image-poster>.product-image-single{object-fit:cover;object-position:center;background:#f4f0e6}
+.detail-visual .product-image-frame.product-image-poster>.product-image-single{object-fit:contain}
+.detail-visual:has(.product-image-poster){aspect-ratio:4/5}
+.product-image-poster~.product-badge{display:none}
+
+/* Square product cutouts fill the card while preserving complete product edges. */
+.product-image-frame.product-image-cutout>.product-image-single{object-fit:cover;object-position:center;background:#f1f0ea}
+.product-image-cutout~.product-badge{display:none}
+.detail-visual:has(.product-image-cutout){aspect-ratio:1}
